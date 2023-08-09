@@ -22,6 +22,7 @@ public class ProtectionLib {
         handleCompatibility("Lands", plugin, (m, p) -> new LandsCompat(m, p));
         handleCompatibility("PlotSquared", plugin, (m, p) -> new PlotSquaredCompat(m, p));
         handleCompatibility("CrashClaim", plugin, (m, p) -> new CrashClaimCompat(m, p));
+        handleCompatibility("CYTKingdoms", plugin, (m, p) -> new KingdomsCompat(m, p));
     }
 
     public static boolean canBuild(Player player, Location target) {

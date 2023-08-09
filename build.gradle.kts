@@ -18,6 +18,15 @@ repositories {
     maven("https://maven.enginehub.org/repo/")
     maven("https://repo.papermc.io/repository/maven-public/")
     maven("https://jitpack.io")
+    maven("https://repo.mangostudios.uk/repository/internal/") {
+        credentials {
+            username = System.getProperty("MANGO_STUDIOS_REPO_USERNAME")
+            password = System.getProperty("MANGO_STUDIOS_REPO_PASSWORD")
+        }
+        authentication {
+            create<BasicAuthentication>("basic")
+        }
+    }
 }
 
 dependencies {
@@ -35,6 +44,7 @@ dependencies {
     implementation(platform("com.intellectualsites.bom:bom-1.18.x:1.20"))
     compileOnly("com.plotsquared:PlotSquared-Core")
     compileOnly("com.plotsquared:PlotSquared-Bukkit")
+    compileOnly("com.oxywire:kingdoms:1.0.1")
 }
 
 java {
