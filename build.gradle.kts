@@ -59,6 +59,17 @@ publishing {
     publications {
         register<MavenPublication>("maven") {
             from(components.getByName("java"))
+
+            repositories {
+                maven {
+                    credentials {
+                        username = System.getenv("MANGO_STUDIOS_REPO_USERNAME")
+                        password = System.getenv("MANGO_STUDIOS_REPO_PASSWORD")
+                    }
+
+                    url = uri("https://repo.mangostudios.uk/repository/internal/")
+                }
+            }
         }
     }
 }
